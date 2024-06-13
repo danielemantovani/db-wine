@@ -11,7 +11,7 @@
 
                <div class="card">
 
-                  <img src="{{ $wine->image }}" class="img-fluid" alt="...">
+                  <img src="{{ $wine->image }}" class="img-fluid" alt="Image of {{ $wine->wine }}">
 
                   <div class="card-body">
 
