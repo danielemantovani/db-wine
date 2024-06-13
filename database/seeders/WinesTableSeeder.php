@@ -15,21 +15,20 @@ class WinesTableSeeder extends Seeder
     public function run(): void
     {
 
-        $response = Http::get('https://api.sampleapis.com/wines/reds');
+        $response = Http::withOptions(['verify' => false])->get('https://api.sampleapis.com/wines/reds');
 
-        // $data = $response->json();
+        $data = $response->json();
 
-        // foreach ($data as  $wine) {
+        foreach ($data as  $wine) {
 
-        //     $newWine = new Wine();
+            $newWine = new Wine();
 
-        //     $newWine->winery = $wine->winery;
-        //     $newWine->wine = $wine->wine;
-        //     $newWine->location = $wine->location;
-        //     $newWine->image = $wine->image;
+            $newWine->winery = $wine['winery'];
+            $newWine->wine = $wine['wine'];
+            $newWine->location = $wine['location'];
+            $newWine->image = $wine['image'];
 
-        //     $newWine->save();
-        // };
-
+            $newWine->save();
+        };
     }
 }
