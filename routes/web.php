@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('wines', WineControllerRes::class);
+Route::resource('wine', WineControllerRes::class);

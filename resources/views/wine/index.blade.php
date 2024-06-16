@@ -15,9 +15,7 @@
 
                                 <h5 class="card-title">Wine: {{ $wine->wine }}</h5>
 
-                                <h4 class="card-subtitle">Winery: {{ $wine->winery }}</h4>
-    
-                                <h4 class="card-subtitle">Location: {{ $wine->location }}</h4>
+                                <a href="{{route('wine.show', ['wine' => $wine->id])}}" class="btn btn-primary">Comic Details</a>
     
                             </div>
                         </div>
