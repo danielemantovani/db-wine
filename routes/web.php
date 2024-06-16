@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\WineController;
+use App\Http\Controllers\Admin\WineControllerRes;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/wine_list', [WineController::class, 'index'])->name('wine.index');
+Route::resource('wines', WineControllerRes::class);
