@@ -1,9 +1,10 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
 .card {
-
+   width: 20rem;
+   height: 30rem;
 
    img {
-      width: 200px;
+      max-width: 200px;
    }
 }
