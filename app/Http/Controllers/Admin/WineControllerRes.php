@@ -15,7 +15,7 @@ class WineControllerRes extends Controller
     {
         $winesObj = Wine::all();
 
-        return view('wine.index', compact('winesObj'));
+        return view('wines.index', compact('winesObj'));
     }
 
     /**
@@ -39,7 +39,7 @@ class WineControllerRes extends Controller
      */
     public function show(Wine $wine)
     {
-        return view('wine.show', compact('wine'));
+        return view('wines.show', compact('wine'));
     }
 
     /**

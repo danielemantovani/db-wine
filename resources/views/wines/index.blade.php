@@ -15,7 +15,7 @@
 
                                 <h5 class="card-title">Wine: {{ $wine->wine }}</h5>
 
-                                <a href="{{route('wine.show', ['wine' => $wine->id])}}" class="btn btn-primary">Wine Details</a>
+                                <a href="{{route('wines.show', ['wine' => $wine->id])}}" class="btn btn-primary">Wine Details</a>
     
                             </div>
                         </div>
