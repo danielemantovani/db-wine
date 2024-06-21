@@ -24,6 +24,9 @@
                 <label for="image" class="form-label">Image</label>
                 <input type="text" class="form-control" id="image" name="image" value="{{ $wine->image }}">
             </div>
+
+            <a href="{{route('wines.index')}}" class="btn btn-outline-primary" title="Indietro"><i class="fa-solid fa-square-caret-left" ></i></a>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     @endsection
