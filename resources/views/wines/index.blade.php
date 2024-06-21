@@ -25,6 +25,9 @@
                                 <a href="{{ route('wines.show', ['wine' => $wine->id]) }}" class="btn btn-primary">Wine
                                     Details</a>
 
+                                <a href="{{ route('wines.edit', ['wine' => $wine->id]) }}" class="btn btn-warning">Wine
+                                    Modify</a>
+                                
                             </div>
                         </div>
                     </div>
