@@ -31,7 +31,11 @@ class WineControllerRes extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newWine = new Wine();
+        $newWine->fill($data);
+        $newWine->save();
+        return redirect()->route('wines.show', ['wine' => $newWine->id]);
     }
 
     /**
