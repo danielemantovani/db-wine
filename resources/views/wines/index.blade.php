@@ -11,11 +11,7 @@
             </div>
 
             {{-- Deleted Message --}}
-            @if (session('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
-                </div>
-            @endif
+            @include('partials.errors')
 
             {{-- Wines Cards --}}
             <div class="row g-3">
