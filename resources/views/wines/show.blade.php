@@ -23,6 +23,6 @@
 
                 <dt class="fs-3">Location:</dt>
                 <dd class="fw-semibold">{{ $wine->location }}</dd>
-
+                <a href="{{route('wines.index')}}" class="btn btn-outline-primary" title="Indietro"><i class="fa-solid fa-square-caret-left" ></i></a>
     </section>
 @endsection
