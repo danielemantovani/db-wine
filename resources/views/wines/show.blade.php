@@ -8,12 +8,12 @@
             <dl class="px-5">
                 <dt class="fs-1">Wine:</dt>
                 <dd class="fw-semibold"> {{ $wine->wine }} </dd>
-              
+
                 <dt class="fs-3">Winery:</dt>
                 <dd class="fw-semibold">{{ $wine->winery }}</dd>
-              
+
                 <dt class="fs-3">Location:</dt>
                 <dd class="fw-semibold">{{ $wine->location }}</dd>
-                
+
     </section>
 @endsection
