@@ -29,6 +29,6 @@ class WinesTableSeeder extends Seeder
             $newWine->image = $wine['image'];
 
             $newWine->save();
-        };
+        }
     }
 }
