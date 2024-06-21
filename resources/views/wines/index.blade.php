@@ -7,8 +7,15 @@
             {{-- Title  --}}
             <div class="d-flex justify-content-between align-items-center">
                 <h1 class="py-5">Wines List</h1>
-                <a href="{{route('wines.create')}}" class="btn btn-secondary">Aggiungi</a>
+                <a href="{{ route('wines.create') }}" class="btn btn-secondary">Aggiungi</a>
             </div>
+
+            {{-- Deleted Message --}}
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
 
             {{-- Wines Cards --}}
             <div class="row g-3">
@@ -24,8 +31,15 @@
 
                                 <a href="{{ route('wines.show', ['wine' => $wine->id]) }}" class="btn btn-primary">Wine
                                     Details</a>
-
                             </div>
+
+                            {{-- Delete element --}}
+                            <form action="{{ route('wines.destroy', ['wine' => $wine->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" id="cancel-btn">Delete</button>
+                            </form>
+
                         </div>
                     </div>
                 @endforeach
