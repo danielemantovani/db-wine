@@ -49,17 +49,19 @@ class WineControllerRes extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Wine $wine)
     {
-        //
+        return view ('wines.edit', compact('wine'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Wine $wine)
     {
-        //
+        $data = $request->all();
+        $wine->update($data);
+        return redirect()->route('wines.show', ['wine' => $wine->id]);
     }
 
     /**
