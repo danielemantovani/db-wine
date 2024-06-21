@@ -3,11 +3,11 @@
 @section('content')
     <h1 class="text-center">Modify Page</h1>
 
-     <div class="container">
+    <div class="container">
         <form action=" {{ route('wines.update', ['wine' => $wine->id]) }} " method="POST">
             @csrf
             @method('PUT')
-            
+
             <div class="mb-3">
                 <label for="winery" class="form-label">Winery</label>
                 <input type="text" class="form-control" id="winery" name="winery" value="{{ $wine->winery }}">
@@ -26,5 +26,4 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-
-@endsection
+    @endsection

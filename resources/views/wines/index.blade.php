@@ -23,7 +23,7 @@
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="card">
                             <picture>
-                                <img src="{{ $wine->image }}" class="img-fluid" alt="{{ $wine->wine }}">
+                                <img src="{{ $wine['image'] }}" class="img-fluid" alt="{{ $wine->wine }}">
                             </picture>
                             <div class="card-body">
 

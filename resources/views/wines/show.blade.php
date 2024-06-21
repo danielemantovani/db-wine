@@ -3,6 +3,15 @@
 @section('content')
     <section>
         <h1 class="py-5 text-center">Wine Detail Page</h1>
+        <div class="container">
+            {{-- Deleted Message --}}
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
+        </div>
+        
         <div class="container d-flex border border-secondary-subtle">
             <img src=" {{ $wine->image }} " class="img-fluid" alt="{{ $wine->image }}">
             <dl class="px-5">

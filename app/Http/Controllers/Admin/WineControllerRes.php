@@ -61,7 +61,7 @@ class WineControllerRes extends Controller
     {
         $data = $request->all();
         $wine->update($data);
-        return redirect()->route('wines.show', ['wine' => $wine->id]);
+        return redirect()->route('wines.show', ['wine' => $wine->id])->with('message', 'Il vino '. $wine->wine .' è stato modificato');
     }
 
     /**
