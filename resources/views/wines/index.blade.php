@@ -24,21 +24,23 @@
                             <div class="card-body">
 
                                 <h5 class="card-title">Wine: {{ $wine->wine }}</h5>
+                                <div class="d-flex gap-2">
+                                    <a href="{{ route('wines.show', ['wine' => $wine->id]) }}" class="btn btn-primary" title="Info"><i
+                                            class="fa-solid fa-circle-info"></i></a>
 
-                                <a href="{{ route('wines.show', ['wine' => $wine->id]) }}" class="btn btn-primary">Wine
-                                    Details</a>
+                                    <a href="{{ route('wines.edit', ['wine' => $wine->id]) }}" class="btn btn-warning" title="Modify"><i
+                                            class="fa-solid fa-pen"></i></a>
 
-                                <a href="{{ route('wines.edit', ['wine' => $wine->id]) }}" class="btn btn-warning">Wine
-                                    Modify</a>
-                                
+                                    {{-- Delete element --}}
+                                    <form action="{{ route('wines.destroy', ['wine' => $wine->id]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" id="cancel-btn" title="Delete"><i
+                                                class="fa-solid fa-trash"></i></button>
+                                    </form>
+                                </div>
                             </div>
 
-                            {{-- Delete element --}}
-                            <form action="{{ route('wines.destroy', ['wine' => $wine->id]) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" id="cancel-btn">Delete</button>
-                            </form>
 
                         </div>
                     </div>
