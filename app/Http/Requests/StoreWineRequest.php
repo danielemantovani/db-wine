@@ -22,10 +22,25 @@ class StoreWineRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'winery'=>['required', 'min:5'],
-            'wine'=>['required', 'min:5'],
-            'location'=>['nullable'],
-            'image'=>['nullable'],
+            'winery' => ['required', 'min:5'],
+            'wine' => ['required', 'min:5'],
+            'location' => ['nullable'],
+            'image' => ['nullable'],
+        ];
+    }
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'winery.required' => 'Inserire la cantina',
+            'winery.min' => 'Inserire almeno 5 caratteri per la cantina',
+            'wine.required' => 'Inserire il nome del vino',
+            'wine.min' => 'Inserire almeno 5 caratteri per il nome del vino',
         ];
     }
 }
