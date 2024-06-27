@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreWineRequest;
+use App\Http\Requests\UpdateWineRequest;
 use App\Models\Wine;
 use Illuminate\Http\Request;
 
@@ -58,9 +59,9 @@ class WineControllerRes extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Wine $wine)
+    public function update(UpdateWineRequest $request, Wine $wine)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $wine->update($data);
         return redirect()->route('wines.show', ['wine' => $wine->id])->with('message', 'Il vino '. $wine->wine .' è stato modificato');
     }
