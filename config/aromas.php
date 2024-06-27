@@ -1,7 +1,7 @@
 <?php
 
-return [
-    "aromas" => [
+return
+    [
         "ciliegia",
         "fragola",
         "lampone",
@@ -48,5 +48,4 @@ return [
         "catrame",
         "miele",
         "nocciola"
-    ]
-];
+    ];
