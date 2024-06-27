@@ -11,5 +11,9 @@ class Wine extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public function aromas() {
+        return $this->belongsToMany(Aroma::class);
+    }
+
     protected $fillable = ['winery', 'wine', 'location', 'image'];
 }
