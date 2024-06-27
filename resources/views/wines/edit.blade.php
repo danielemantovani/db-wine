@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center">Modify Page</h1>
+    <h1 class="text-center mt-5 pt-5">Modify Page</h1>
 
     <div class="container">
+        @include('partials.error')
         <form action=" {{ route('wines.update', ['wine' => $wine->id]) }} " method="POST">
             @csrf
             @method('PUT')
