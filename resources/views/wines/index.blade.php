@@ -2,7 +2,7 @@
 
 @section('content')
     <section>
-        <div class="container text-center">
+        <div class="container text-center mt-5">
 
             {{-- Title  --}}
             <div class="d-flex justify-content-between align-items-center">
