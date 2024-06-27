@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center">Creation Page</h1>
-    <div class="container">
+    <h1 class="text-center pt-5 mt-5">Creation Page</h1>
+    <div class="container pt-5">
         <form action=" {{ route('wines.store') }} " method="POST">
             @csrf
             
