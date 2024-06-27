@@ -11,7 +11,7 @@
             </div>
 
             {{-- Deleted Message --}}
-            @include('partials.errors')
+            @include('partials.success')
 
             {{-- Wines Cards --}}
             <div class="row g-3">

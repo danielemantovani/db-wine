@@ -3,9 +3,10 @@
 @section('content')
     <h1 class="text-center">Creation Page</h1>
     <div class="container">
+        @include('partials.error')
         <form action=" {{ route('wines.store') }} " method="POST">
             @csrf
-            
+
             <div class="mb-3">
                 <label for="winery" class="form-label">Winery</label>
                 <input type="text" class="form-control" id="winery" name="winery">
@@ -29,6 +30,4 @@
 
 
     </div>
-
-
 @endsection
