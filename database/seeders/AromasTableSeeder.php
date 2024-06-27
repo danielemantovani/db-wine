@@ -16,17 +16,12 @@ class AromasTableSeeder extends Seeder
     {
         $aromasData = config('aromas');
 
-        // foreach ($aromasData as $aroma) {
-        //     foreach ($aroma as $curAroma) {
-        //         $newAroma = new Aroma();
-        //         $newAroma->aromas = $curAroma[];
-        //     }
-        //     $newAroma->aromas = $aroma;
-
-        for ($i = 0; $i < $aromasData; $i++) {
-            $newAroma = new Aroma();
+        foreach ($aromasData as $aroma) {
+            foreach ($aroma as $curAroma) {
+                $newAroma = new Aroma();
+                $newAroma->aromas = $curAroma;
+                $newAroma->save();
+            }
         }
-
-        // $newAroma->save();
     }
 }
