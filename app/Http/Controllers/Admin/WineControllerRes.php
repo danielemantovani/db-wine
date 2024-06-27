@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreWineRequest;
 use App\Models\Wine;
 use Illuminate\Http\Request;
 
@@ -29,9 +30,9 @@ class WineControllerRes extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreWineRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $newWine = new Wine();
         $newWine->fill($data);
         $newWine->save();
