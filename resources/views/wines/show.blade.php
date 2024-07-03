@@ -9,7 +9,7 @@
         </div>
 
         <div class="container d-flex border border-secondary-subtle">
-            <img src=" {{ $wine->image }} " class="img-fluid" alt="{{ $wine->image }}">
+            <img src=" {{ $wine->image }} " class="img-fluid" alt="{{ $wine->wine }}">
             <dl class="px-5">
 
                 <dt class="fs-1">Wine:</dt>
@@ -20,7 +20,7 @@
                     <dd class="fw-semibold"> {{ $aroma->aromas }} </dd>
                 @empty
                     <dd class="fw-semibold">Nessun Aroma presente</dd>
-                @endforelse 
+                @endforelse
                 
 
 

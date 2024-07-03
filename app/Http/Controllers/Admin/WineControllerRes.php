@@ -26,7 +26,9 @@ class WineControllerRes extends Controller
      */
     public function create()
     {
-        return view('wines.create');
+        $aromas = Aroma::all();
+
+        return view('wines.create', compact('aromas'));
     }
 
     /**
@@ -38,6 +40,9 @@ class WineControllerRes extends Controller
         $newWine = new Wine();
         $newWine->fill($data);
         $newWine->save();
+        if ($request->has('aromas')) {
+            $newWine->aromas()->attach($request->aromas);
+        }
         return redirect()->route('wines.show', ['wine' => $newWine->id]);
     }
 

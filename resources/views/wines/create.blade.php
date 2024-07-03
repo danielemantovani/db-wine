@@ -7,6 +7,8 @@
         <form action=" {{ route('wines.store') }} " method="POST">
             @csrf
 
+            <h1 class="text-center mt-5">Add new wine to the winery</h1>
+
             <div class="mb-3">
                 <label for="winery" class="form-label">Winery</label>
                 <input type="text" class="form-control" id="winery" name="winery">
@@ -14,6 +16,29 @@
             <div class="mb-3">
                 <label for="wine" class="form-label">Wine</label>
                 <input type="text" class="form-control" id="wine" name="wine">
+            </div>
+            <div class="col-12 mb-3">
+                <label for="aromas" class="form-label">Aromas</label>
+                <div class="d-flex gap-2">
+                    <select type="select" class="form-select" id="aromas" name="aromas[]">
+                        <option value="#"> Choose an aroma </option>
+                        @foreach ($aromas as $aroma)
+                        <option value="{{ $aroma->id }}"> {{ $aroma->aromas }} </option>
+                        @endforeach
+                    </select>
+                    <select type="select" class="form-select" id="aromas" name="aromas[]">
+                        <option value="#"> Choose an aroma </option>
+                        @foreach ($aromas as $aroma)
+                        <option value="{{ $aroma->id }}"> {{ $aroma->aromas }} </option>
+                        @endforeach
+                    </select>
+                    <select type="select" class="form-select" id="aromas" name="aromas[]">
+                        <option value="#"> Choose an aroma </option>
+                        @foreach ($aromas as $aroma)
+                        <option value="{{ $aroma->id }}"> {{ $aroma->aromas }} </option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="location" class="form-label">Location</label>
