@@ -5,7 +5,7 @@
         <h1 class="py-5 text-center">Wine Detail Page</h1>
         <div class="container">
             {{-- Deleted Message --}}
-            @include('partials.errors')
+            @include('partials.error')
         </div>
 
         <div class="container d-flex border border-secondary-subtle">
