@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreWineRequest;
 use App\Http\Requests\UpdateWineRequest;
+use App\Models\Aroma;
 use App\Models\Wine;
 use Illuminate\Http\Request;
 
