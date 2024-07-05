@@ -26,7 +26,7 @@ class StoreWineRequest extends FormRequest
             'wine' => ['required', 'min:5'],
             'location' => ['nullable'],
             'image' => ['nullable'],
-            'aromas' => ['nullable']
+            'aromas' => ['nullable', 'exists:aromas,id']
         ];
     }
 

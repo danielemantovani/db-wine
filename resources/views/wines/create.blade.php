@@ -20,22 +20,9 @@
             <div class="col-12 mb-3">
                 <label for="aromas" class="form-label">Aromas</label>
                 <div class="d-flex gap-2">
-                    <select type="select" class="form-select" id="aromas" name="aromas[]">
-                        <option value="#"> Choose an aroma </option>
+                    <select type="select" multiple class="form-select" id="aromas" name="aromas[]">
                         @foreach ($aromas as $aroma)
-                        <option value="{{ $aroma->id }}"> {{ $aroma->aromas }} </option>
-                        @endforeach
-                    </select>
-                    <select type="select" class="form-select" id="aromas" name="aromas[]">
-                        <option value="#"> Choose an aroma </option>
-                        @foreach ($aromas as $aroma)
-                        <option value="{{ $aroma->id }}"> {{ $aroma->aromas }} </option>
-                        @endforeach
-                    </select>
-                    <select type="select" class="form-select" id="aromas" name="aromas[]">
-                        <option value="#"> Choose an aroma </option>
-                        @foreach ($aromas as $aroma)
-                        <option value="{{ $aroma->id }}"> {{ $aroma->aromas }} </option>
+                            <option @selected(in_array($aroma->id, old('aromas', []))) value="{{ $aroma->id }}"> {{ $aroma->aromas }} </option>
                         @endforeach
                     </select>
                 </div>

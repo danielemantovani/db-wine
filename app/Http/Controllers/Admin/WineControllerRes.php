@@ -59,7 +59,9 @@ class WineControllerRes extends Controller
      */
     public function edit(Wine $wine)
     {
-        return view ('wines.edit', compact('wine'));
+        $aromas = Aroma::all();
+
+        return view ('wines.edit', compact('wine', 'aromas'));
     }
 
     /**
@@ -69,6 +71,7 @@ class WineControllerRes extends Controller
     {
         $data = $request->validated();
         $wine->update($data);
+        $wine->aromas()->sync($request->aromas);
         return redirect()->route('wines.show', ['wine' => $wine->id])->with('message', 'Il vino '. $wine->wine .' è stato modificato');
     }
 
